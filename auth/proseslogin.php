@@ -4,6 +4,10 @@ session_start();
 
 require_once "../config.php";
 
+$role = $_POST['role'] ?? 'admin';
+$query = mysqli_query($koneksi, "SELECT * FROM tbl_user WHERE username = '$username' AND level = '$role'");
+
+
 // jika tombol login ditekan
 if (isset($_POST['login'])) {
     $username = htmlspecialchars($_POST['username']);

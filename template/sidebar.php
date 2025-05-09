@@ -9,6 +9,10 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Dashboard
                             </a>
+                            <a class="nav-link" href="<?= $main_url ?>school/profile-sekolah.php">
+                                <div class="sb-nav-link-icon"><i class="fa-solid fa-school"></i></div>
+                                Profile Sekolah
+                            </a>
                             <hr class="mb-0">
                             <div class="sb-sidenav-menu-heading">Admin</div>
                             <a class="nav-link" href="<?= $main_url ?>user/add-user.php">
@@ -46,3 +50,4 @@
                     </div>
                 </nav>
             </div>
+

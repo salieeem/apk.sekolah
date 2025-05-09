@@ -16,7 +16,6 @@
                 <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                     <li><a class="dropdown-item" data-bs-toggle="modal" href="#mdlProfileUser">Profile User</a></li>
-                    <li><a class="dropdown-item" href="<?php $main_url ?>school/profile-sekolah.php">Profile Sekolah</a></li>
                     <li>
                         <hr class="dropdown-divider" />
                     </li>
@@ -30,7 +29,6 @@
     $queryUser = mysqli_query($koneksi, "SELECT * FROM tbl_user WHERE username = '$username'");
     $profile = mysqli_fetch_array($queryUser);
     ?>
-
     <div class="modal" tabindex="-1" id="mdlProfileUser">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -39,13 +37,14 @@
                     <h5 class="modal-title">Profile User</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
+
                 <div class="modal-body text-center">
                     <div class="card mx-auto" style="max-width: 600px;">
-                        <div class="card-body d-flex">
-                            <div class="me-4">
+                        <div class="card-body d-flex flex-wrap justify-content-center">
+                            <div class="me-4 mb-3">
                                 <img src="<?= $main_url ?>asset/image/<?= $profile['foto'] ?>" alt="Foto User" class="rounded" style="width: 100px; height: 100px; object-fit: cover;">
                             </div>
-                            <div class="text-start">
+                            <div class="text-start" style="min-width: 300px;">
                                 <h5 class="mb-3">User</h5>
                                 <div class="row mb-2">
                                     <div class="col-4 fw-bold">Nama</div>
@@ -57,7 +56,7 @@
                                     <div class="col-1">:</div>
                                     <div class="col-7"><?= $profile['jabatan'] ?></div>
                                 </div>
-                                <div class="row">
+                                <div class="row mb-2">
                                     <div class="col-4 fw-bold">Alamat</div>
                                     <div class="col-1">:</div>
                                     <div class="col-7"><?= $profile['alamat'] ?></div>

@@ -53,7 +53,8 @@ $maxnis = "NIS".sprintf("%03s", $noUrutan);
                                     <label for="nis" class="col-sm-2 col-form-label">NIS</label>
                                     <label class="col-sm-1 col-form-label">:</label>
                                     <div class="col-sm-9" style="margin-left: -50px;">
-                                        <input type="text" name="nis" readonly class="form-control-plaintext border-bottom" id="nis" value="<?= $maxnis ?>">
+                                        <input type="text" name="nis" required class="form-control-plaintext border-bottom" id="nis">
+<!-- value=<.?= $maxnis ?>" -->
                                     </div>
                                 </div>
                                 <div class="mb-3 row">
@@ -112,4 +113,8 @@ $maxnis = "NIS".sprintf("%03s", $noUrutan);
     </main>
 </div>
 
-<?php require_once "../template/footer.php"; ?>
+<?php 
+
+require_once "../template/footer.php"; 
+
+?>

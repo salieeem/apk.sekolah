@@ -75,12 +75,12 @@ if ($msg == 'updated') {
                                         placeholder="Masukkan Nama Pelajaran" required>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="jurusan" class="form-label"> Jurusan</label>
+                                    <label for="jurusan" class="form-label"> Kelas</label>
                                     <select name="jurusan" id="jurusan" class="form-select" required>
-                                        <option value="" selected>-- Pilih Jurusan --</option>
-                                        <option value="IPA">IPA</option>
-                                        <option value="IPS">IPS</option>
-                                        <option value="Bahasa">Bahasa</option>
+                                        <option value="" selected>-- Pilih Kelas --</option>
+                                        <option value="IPA">TK A</option>
+                                        <option value="IPS">TK B</option>
+                                        <option value="Bahasa">Umum</option>
                                     </select>
                                 </div>
                                 <div class="mb-3">
