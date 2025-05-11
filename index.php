@@ -1,12 +1,10 @@
 <?php
-
 session_start();
 
 if (!isset($_SESSION["ssLogin"])) {
     header("Location:auth/login.php");
     exit;
 }
-
 
 require_once "config.php";
 
@@ -26,12 +24,21 @@ require_once "template/sidebar.php";
             <ol class="breadcrumb mb-4">
                 <li class="breadcrumb-item active">Home</li>
             </ol>
+
+            <?php
+            $querySiswa = mysqli_query($koneksi, "SELECT * FROM tbl_siswa");
+            $jmlSiswa = mysqli_num_rows($querySiswa);
+
+            $queryGuru = mysqli_query($koneksi, "SELECT * FROM tbl_guru");
+            $jmlGuru = mysqli_num_rows($queryGuru);
+            ?>
+
             <div class="row">
                 <div class="col-xl-3 col-md-6">
                     <div class="card bg-primary text-white mb-4">
                         <div class="card-body">Jumlah Siswa</div>
                         <div class="card-footer d-flex align-items-center justify-content-between">
-                            <a class="small text-white stretched-link" href="#">0 Orang</a>
+                            <a class="small text-white stretched-link" href="#"> <?= $jmlSiswa . ' Orang' ?></a>
                             <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                         </div>
                     </div>
@@ -40,7 +47,7 @@ require_once "template/sidebar.php";
                     <div class="card bg-warning text-white mb-4">
                         <div class="card-body">Jumlah Guru</div>
                         <div class="card-footer d-flex align-items-center justify-content-between">
-                            <a class="small text-white stretched-link" href="#">0 Orang</a>
+                            <a class="small text-white stretched-link" href="#"> <?= $jmlGuru . ' Orang' ?></a>
                             <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                         </div>
                     </div>
@@ -64,6 +71,7 @@ require_once "template/sidebar.php";
                     </div>
                 </div>
             </div>
+
             <div class="row">
                 <div class="col-xl">
                     <div class="card mb-4">
@@ -77,8 +85,7 @@ require_once "template/sidebar.php";
             </div>
         </div>
     </main>
+</div>
 
-    <?php
 
-    require_once "template/footer.php";
-    ?>
+<?php require_once "template/footer.php"; ?>

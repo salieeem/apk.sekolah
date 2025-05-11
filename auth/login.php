@@ -82,7 +82,12 @@ $data = mysqli_fetch_array($sekolah);
 <body id="bgLogin">
     <div class="login-card">
         <div class="login-logo">
-            <img src="<?= $main_url ?>asset/image/toga.png" alt="Logo">
+            <?php
+            $role = $_GET['role'] ?? 'admin'; // default ke admin jika tidak diset
+            $roleImage = $role . '-image.png'; // akan jadi 'admin-image.png', 'guru-image.png', dst.
+            ?>
+            <img src="<?= $main_url ?>asset/image/<?= $roleImage ?>" alt="Login Image" style="max-height: 150px;">
+
             <h3 class="text-center font-weight-light my-4">
                 Login - <?= ucfirst($_GET['role'] ?? 'admin') ?>
             </h3>

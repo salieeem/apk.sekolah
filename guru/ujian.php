@@ -10,7 +10,7 @@ if (!isset($_SESSION['ssLogin'])) {
 require_once "../config.php";
 $title = "Data Ujian - Qurrotul A'yun";
 require_once "../template/header.php";
-require_once "../template/sidebar.php";
+require_once "../template/sidebar-guru.php";
 require_once "../template/navbar.php";
 
 ?>

@@ -98,9 +98,9 @@ if ($msg == 'cancel') {
                                     <div class="col-sm-9">
                                         <select name="level" id="level" class="form-select" required>
                                             <option value="" selected>--Pilih Level--</option>
-                                            <option value="Kepsek">Admin</option>
-                                            <option value="Staf TU">Guru</option>
-                                            <option value="Guru">Siswa</option>
+                                            <option value="admin">Admin</option>
+                                            <option value="guru">Guru</option>
+                                            <option value="siswa">Siswa</option>
                                         </select>
                                     </div>
                                 </div>

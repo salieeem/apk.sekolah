@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 08 Bulan Mei 2025 pada 03.52
+-- Waktu pembuatan: 11 Bulan Mei 2025 pada 11.29
 -- Versi server: 10.4.32-MariaDB
 -- Versi PHP: 8.4.6
 
@@ -77,7 +77,7 @@ INSERT INTO `tbl_nilai_ujian` (`id`, `no_ujian`, `pelajaran`, `nilai_ujian`) VAL
 CREATE TABLE `tbl_pelajaran` (
   `id` int(11) NOT NULL,
   `pelajaran` varchar(50) NOT NULL,
-  `jurusan` varchar(50) NOT NULL,
+  `kelas` varchar(50) NOT NULL,
   `guru` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -85,9 +85,10 @@ CREATE TABLE `tbl_pelajaran` (
 -- Dumping data untuk tabel `tbl_pelajaran`
 --
 
-INSERT INTO `tbl_pelajaran` (`id`, `pelajaran`, `jurusan`, `guru`) VALUES
-(1, 'Matematika', 'IPA', 'Salim Ganteng'),
-(2, 'Tahsin', 'IPA', 'Salim Ganteng');
+INSERT INTO `tbl_pelajaran` (`id`, `pelajaran`, `kelas`, `guru`) VALUES
+(1, 'Matematika', 'TK A', 'Salim Ganteng'),
+(2, 'Tahsin', 'TK B', 'Salim Ganteng'),
+(3, 'Tahsin 2', 'Umum', 'Salim Ganteng');
 
 -- --------------------------------------------------------
 
@@ -111,7 +112,7 @@ CREATE TABLE `tbl_sekolah` (
 --
 
 INSERT INTO `tbl_sekolah` (`id`, `nama`, `alamat`, `akreditasi`, `status`, `email`, `visimisi`, `gambar`) VALUES
-(1, 'Qurrotul A&#039;yun', 'bukit tempurung, kuala simpang', 'A', 'Swasta', 'yayasanqa@gmail.com', 'mencetak calon-calon penghuni surga', '4-bgLogin.jpg');
+(1, 'Qurrotul A&#039;yun', 'bukit tempurung, kuala simpang', 'A', 'Swasta', 'yayasanqa@gmail.com', 'mencetak calon-calon penghuni surga', '50-bgLogin.jpg');
 
 -- --------------------------------------------------------
 
@@ -133,6 +134,9 @@ CREATE TABLE `tbl_siswa` (
 --
 
 INSERT INTO `tbl_siswa` (`nis`, `nama`, `alamat`, `kelas`, `jurusan`, `foto`) VALUES
+('0001', 'mufliha', 'jogja', 'XI', 'IPA', '844-mufliha.jpg'),
+('0002', 'ashira', 'apanjai', 'X', 'IPA', '683-ashira.jpg'),
+('0003', 'maryam', 'jaaakarta', 'X', 'IPA', '663-maryam.jpg'),
 ('NIS001', 'afia', 'joga', 'XI', 'IPA', '181-afia.jpg');
 
 -- --------------------------------------------------------
@@ -175,15 +179,18 @@ CREATE TABLE `tbl_user` (
   `nama` varchar(128) NOT NULL,
   `alamat` varchar(128) NOT NULL,
   `jabatan` varchar(128) NOT NULL,
-  `foto` varchar(128) NOT NULL
+  `foto` varchar(128) NOT NULL,
+  `level` enum('admin','guru','siswa') NOT NULL DEFAULT 'siswa'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data untuk tabel `tbl_user`
 --
 
-INSERT INTO `tbl_user` (`id`, `username`, `password`, `nama`, `alamat`, `jabatan`, `foto`) VALUES
-(1, 'Admin1', '$2y$10$ILUTPk2qeWx661q2Z7aOVenGYXbjKaWwYHhU/vHNOdccuipm14hiq', 'Salim Ganteng', 'aeaawaa', 'Kepsek', '381-abcd.jpg');
+INSERT INTO `tbl_user` (`id`, `username`, `password`, `nama`, `alamat`, `jabatan`, `foto`, `level`) VALUES
+(9, 'admin', '$2y$12$DRn6TtnRMbRCkSbg0codjOxR57GFraZQINGt3WLNxxEob18FUJskW', 'Salim Ganteng', 'jannah firdaus', 'Kepsek', '1000-abcd.jpg', 'admin'),
+(10, 'guru', '$2y$12$OhQwqIcb.ldii0SgmW7jz.9ExPVn7gX941csFZDx.kGu6WmZtRmYS', 'Salim Ganteng', 'jannah firdaus', 'Guru', '564-abcd.jpg', 'guru'),
+(11, 'siswa', '$2y$12$EKkYmyom1hfwPRsp0pO/ueA7kN3GemjmHX/Brwxxv/L1cxAWb7R3K', 'Salim Ganteng', 'jannah firdaus', 'Guru', '857-abcd.jpg', 'siswa');
 
 --
 -- Indexes for dumped tables
@@ -251,7 +258,7 @@ ALTER TABLE `tbl_nilai_ujian`
 -- AUTO_INCREMENT untuk tabel `tbl_pelajaran`
 --
 ALTER TABLE `tbl_pelajaran`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT untuk tabel `tbl_sekolah`
@@ -263,7 +270,7 @@ ALTER TABLE `tbl_sekolah`
 -- AUTO_INCREMENT untuk tabel `tbl_user`
 --
 ALTER TABLE `tbl_user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

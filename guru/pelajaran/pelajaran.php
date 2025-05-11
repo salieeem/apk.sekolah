@@ -4,22 +4,22 @@
 session_start();
 
 if (!isset($_SESSION["ssLogin"])) {
-    header("Location: ../auth/login.php");
+    header("Location: ../../auth/login.php");
     exit;
 }
 
-require_once "../config.php";
+require_once "../../config.php";
 $title = "Mata Pelajaran - Qurrotul A'yun";
-require_once "../template/header.php";
-require_once "../template/sidebar.php";
-require_once "../template/navbar.php";
+require_once "../../template/header.php";
+require_once "../../template/sidebar-guru.php";
+require_once "../../template/navbar.php";
 
 $msg = $_GET['msg'] ?? "";
 
 $alert = '';
 if ($msg == 'cancel') {
     $alert = '<div class="alert alert-danger alert-dismissible fade show" role="alert">
-    <i class="fa-solid fa-circle-xmark"></i> Data guru gagal diperbaharui, NIP sudah ada..   
+    <i class="fa-solid fa-circle-xmark"></i> Pelajaran gagal ditambahkan, Mata Pelajaran sudah ada..   
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 </div>';
 }
@@ -78,9 +78,9 @@ if ($msg == 'updated') {
                                     <label for="kelas" class="form-label"> Kelas</label>
                                     <select name="kelas" id="kelas" class="form-select" required>
                                         <option value="" selected>-- Pilih Kelas --</option>
-                                        <option value="IPA">TK A</option>
-                                        <option value="IPS">TK B</option>
-                                        <option value="Bahasa">Umum</option>
+                                        <option value="TK A">TK A</option>
+                                        <option value="TK B">TK B</option>
+                                        <option value="Umum">Umum</option>
                                     </select>
                                 </div>
                                 <div class="mb-3">
@@ -272,6 +272,6 @@ if ($msg == 'updated') {
 
     <?php
 
-    require_once "../template/footer.php"
+    require_once "../../template/footer.php"
 
     ?>

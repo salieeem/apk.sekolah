@@ -8,13 +8,11 @@ if (!isset($_SESSION["ssLogin"])) {
 }
 
 
-require_once "config.php";
-
+require_once('../config.php');
 $title = "Dashboard - Qurrotul A'yun";
-
-require_once "template/header.php";
-require_once "template/navbar.php";
-require_once "template/sidebar.php";
+require_once "../template/header.php";
+require_once "../template/sidebar.php";
+require_once "../template/navbar.php";
 
 
 ?>
@@ -80,5 +78,5 @@ require_once "template/sidebar.php";
 
     <?php
 
-    require_once "template/footer.php";
+    require_once "../template/footer.php";
     ?>

@@ -3,12 +3,12 @@
 session_start();
 
 if (!isset($_SESSION["ssLogin"])) {
-    header("location: ../auth/login.php");
+    header("location: ../../auth/login.php");
     exit();
 
 }
 
-require_once "../config.php";
+require_once "../../config.php";
 
 if (isset($_POST['simpan'])) {
     $nis        = $_POST['nis'];
@@ -49,8 +49,8 @@ if (isset($_POST['simpan'])) {
     } else {
         $url = "siswa.php";
         $fotoSiswa = uploadimg($url);
-        if ($foto != 'default-user.png') {
-            @unlink("../asset/image/$foto");
+        if ($foto != 'default-user.jpg') {
+            @unlink("../../asset/image/$foto");
         }
     }
 

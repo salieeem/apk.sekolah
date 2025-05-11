@@ -4,15 +4,15 @@
 session_start();
 
 if (!isset($_SESSION["ssLogin"])) {
-    header("Location: ../auth/login.php");
+    header("Location: ../../auth/login.php");
     exit;
 }
 
-require_once "../config.php";
+require_once "../../config.php";
 $title = "Mata Pelajaran - Qurrotul A'yun";
-require_once "../template/header.php";
-require_once "../template/sidebar.php";
-require_once "../template/navbar.php";
+require_once "../../template/header.php";
+require_once "../../template/sidebar-guru.php";
+require_once "../../template/navbar.php";
 
 $id = $_GET['id'];
 
@@ -43,10 +43,10 @@ $data = mysqli_fetch_array($queryPelajaran);
                                         placeholder="Masukkan Nama Pelajaran" value="<?= $data['pelajaran'] ?>" required>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="kelas" class="form-label"> Kelas</label>
+                                    <label for="kelas" class="form-label"> kelas</label>
                                     <select name="kelas" id="kelas" class="form-select" required>
                                         <?php
-                                        $kelas = ["IPA", "IPS", "Bahasa"];
+                                        $kelas = ["TK A", "TK B", "Umum"];
                                         foreach ($kelas as $jrs) { 
                                         if ($data['kelas'] == $jrs) { ?>
                                         <option value="<?= $jrs ?>" selected><?= $jrs ?></option>
@@ -130,6 +130,6 @@ $data = mysqli_fetch_array($queryPelajaran);
 
     <?php
 
-    require_once "../template/footer.php"
+    require_once "../../template/footer.php"
 
     ?>
