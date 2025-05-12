@@ -15,7 +15,7 @@ require_once "../template/navbar.php";
 
 ?>
 
-<!-- 
+
 <div id="layoutSidenav_content">
     <main>
         <div class="container-fluid px-4">
@@ -27,16 +27,21 @@ require_once "../template/navbar.php";
             <div class="card">
                 <div class="card-header">
                     <i class="fa-solid fa-list-ul"></i> Data Ujian
-                    <a href="nilai-ujian.php" class="btn btn-sm btn-primary float-end ms-1"><i class="fa-solid fa-plus"></i>Tambah Data ujian</a>
+                    <a href="nilai-ujian.php" class="btn btn-sm btn-primary float-end ms-1"><i
+                            class="fa-solid fa-plus"></i>Tambah Data ujian</a>
                     <div class="dropdown" style="margin-top: -30px;">
-                        <button class="btn btn-primary btn-sm dropdown-toggle float-end" type="button" data-bs-toggle="dropdown">Cetak</button>
+                        <button class="btn btn-primary btn-sm dropdown-toggle float-end" type="button"
+                            data-bs-toggle="dropdown">Cetak</button>
                         <ul class="dropdown-menu">
-                            <li><button type="button" onclick="printDoc()" class="dropdown-item"><i class="fa-solid fa-magnifying-glass"></i> Hasil Ujian</button></li>
+                            <li><button type="button" onclick="printDoc()" class="dropdown-item"><i
+                                        class="fa-solid fa-magnifying-glass"></i> Hasil Ujian</button></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
                             <li>
-                                <button type="button" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#mdlCetak"><i class="fa-solid fa-magnifying-glass"></i> Nilai Ujian</button>
+                                <button type="button" class="dropdown-item" data-bs-toggle="modal"
+                                    data-bs-target="#mdlCetak"><i class="fa-solid fa-magnifying-glass"></i> Nilai
+                                    Ujian</button>
                             </li>
                         </ul>
                     </div>
@@ -76,22 +81,24 @@ require_once "../template/navbar.php";
                             $queryUjian = mysqli_query($koneksi, "SELECT * FROM tbl_ujian");
                             while ($data = mysqli_fetch_array($queryUjian)) {
                             ?>
-                                <tr>
-                                    <td><?= $data['no_ujian'] ?></td>
-                                    <td><?= $data['nis'] ?></td>
-                                    <td><?= $data['jurusan'] ?></td>
-                                    <td align="center"><?= $data['total_nilai'] ?></td>
-                                    <td align="center"><?= $data['nilai_terendah'] ?></td>
-                                    <td align="center"><?= $data['nilai_tertinggi'] ?></td>
-                                    <td align="center"><?= $data['nilai_rata2'] ?></td>
-                                    <td>
-                                        <?php if ($data['hasil_ujian'] == "LULUS") { ?>
-                                            <button type="button" class="btn btn-success btn-sm rounded-0 col-10 fw-bold text-uppercase"><?= $data['hasil_ujian'] ?></button>
-                                        <?php } else { ?>
-                                            <button type="button" class="btn btn-danger btn-sm rounded-0 col-10 fw-bold text-uppercase"><?= $data['hasil_ujian'] ?></button>
-                                        <?php } ?>
-                                    </td>
-                                </tr>
+                            <tr>
+                                <td><?= $data['no_ujian'] ?></td>
+                                <td><?= $data['nis'] ?></td>
+                                <td><?= $data['jurusan'] ?></td>
+                                <td align="center"><?= $data['total_nilai'] ?></td>
+                                <td align="center"><?= $data['nilai_terendah'] ?></td>
+                                <td align="center"><?= $data['nilai_tertinggi'] ?></td>
+                                <td align="center"><?= $data['nilai_rata2'] ?></td>
+                                <td>
+                                    <?php if ($data['hasil_ujian'] == "LULUS") { ?>
+                                    <button type="button"
+                                        class="btn btn-success btn-sm rounded-0 col-10 fw-bold text-uppercase"><?= $data['hasil_ujian'] ?></button>
+                                    <?php } else { ?>
+                                    <button type="button"
+                                        class="btn btn-danger btn-sm rounded-0 col-10 fw-bold text-uppercase"><?= $data['hasil_ujian'] ?></button>
+                                    <?php } ?>
+                                </td>
+                            </tr>
 
                             <?php
                             }
@@ -111,10 +118,11 @@ require_once "../template/navbar.php";
                     <select name="no" id="no" class="form-select">
                         <option value="">-- No Ujian --</option>
                         <?php
-                        $dataUjian = mysqli_query($koneksi,"SELECT * FROM tbl_ujian");
+                        $dataUjian = mysqli_query($koneksi, "SELECT * FROM tbl_ujian");
                         while ($data = mysqli_fetch_array($dataUjian)) { ?>
-                            <option value="<?= $data['no_ujian'] ?>"><?= $data['no_ujian'] . ' - ' . $data['nis'] . ' - ' . $data['jurusan'] ?></option>
-                            <?php
+                        <option value="<?= $data['no_ujian'] ?>">
+                            <?= $data['no_ujian'] . ' - ' . $data['nis'] . ' - ' . $data['jurusan'] ?></option>
+                        <?php
                         }
                         ?>
                     </select>
@@ -128,19 +136,19 @@ require_once "../template/navbar.php";
     </div>
 
     <script>
-        function printDoc() {
-            const myWindow = window.open("../report/r-ujian.php", "", "width=900, height=600, left=100")
+    function printDoc() {
+        const myWindow = window.open("../report/r-ujian.php", "", "width=900, height=600, left=100")
+    }
+
+    let noUjian = document.getElementById('no')
+
+    function previewPDF() {
+        if (noUjian.value != '') {
+            const myWindow = window.open("../report/r-nilai-ujian.php?noUjian" + noUjian.value);
         }
 
-        let noUjian = document.getElementById('no')
-
-        function previewPDF() {
-            if (noUjian.value != '') {
-                const myWindow = window.open("../report/r-nilai-ujian.php?noUjian" + noUjian.value);
-            }
-
-        }
-    </script> -->
+    }
+    </script>
 
     <?php
 

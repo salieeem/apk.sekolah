@@ -1,11 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<style>
-#layoutSidenav_content {
-    padding-top: 4rem;
-    /* atau 60px */
-}
-</style>
 
 <head>
     <meta charset="utf-8" />
