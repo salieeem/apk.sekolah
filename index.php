@@ -17,14 +17,13 @@ require_once "template/sidebar.php";
 
 ?>
 
-<div id="layoutSidenav_content">
+<div id="layoutSidenav_content" class="flex-grow-1 d-flex flex-column">
     <main>
         <div class="container-fluid px-4">
             <h1 class="mt-4">Dashboard</h1>
             <ol class="breadcrumb mb-4">
                 <li class="breadcrumb-item active">Home</li>
             </ol>
-
             <?php
             $querySiswa = mysqli_query($koneksi, "SELECT * FROM tbl_siswa");
             $jmlSiswa = mysqli_num_rows($querySiswa);
@@ -85,7 +84,7 @@ require_once "template/sidebar.php";
             </div>
         </div>
     </main>
+
+    <?php require_once "template/footer.php"; ?>
+    <!-- footer diletakkan di dalam layoutSidenav_content -->
 </div>
-
-
-<?php require_once "template/footer.php"; ?>

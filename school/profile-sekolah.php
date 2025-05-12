@@ -64,14 +64,17 @@ $data = mysqli_fetch_array($sekolah);
                 <div class="card">
                     <div class="card-header">
                         <span class="h5"><i class="fa-solid fa-pen-to-square"></i> Data Sekolah</span>
-                        <button type="submit" name="simpan" class="btn btn-primary float-end"><i class="fa-solid fa-floppy-disk"></i> Simpan</button>
-                        <button type="reset" name="reset" class="btn btn-danger float-end me-1"><i class="fa-solid fa-xmark"></i> Reset</button>
+                        <button type="submit" name="simpan" class="btn btn-primary float-end"><i
+                                class="fa-solid fa-floppy-disk"></i> Simpan</button>
+                        <button type="reset" name="reset" class="btn btn-danger float-end me-1"><i
+                                class="fa-solid fa-xmark"></i> Reset</button>
                     </div>
                     <div class="card-body">
                         <div class="row">
                             <div class="col-4 text-center px-5">
                                 <input type="hidden" name="gbrLama" value="<?= $data['gambar'] ?>">
-                                <img src="../asset/image/<?= $data['gambar'] ?>" alt="gambar sekolah" class="mb-3" width="100%">
+                                <img src="../asset/image/<?= $data['gambar'] ?>" alt="gambar sekolah" class="mb-3"
+                                    width="100%">
                                 <input type="file" name="image" class="form-control form-control-sm">
                                 <small class="text-secondary">Pilih gambar PNG, JPG atau JPEG</small>
                             </div>
@@ -81,14 +84,16 @@ $data = mysqli_fetch_array($sekolah);
                                     <label for="nama" class="col-sm-2 col-form-label">Nama</label>
                                     <label for="nama" class="col-sm-1 col-form-label">:</label>
                                     <div class="col-sm-9" style="margin-left: -50px;">
-                                        <input type="text" class="form-control" id="nama" name="nama" value="<?= $data['nama'] ?>" placeholder="Nama Sekolah" required>
+                                        <input type="text" class="form-control" id="nama" name="nama"
+                                            value="<?= $data['nama'] ?>" placeholder="Nama Sekolah" required>
                                     </div>
                                 </div>
                                 <div class="mb-3 row">
                                     <label for="email" class="col-sm-2 col-form-label">Email</label>
                                     <label for="email" class="col-sm-1 col-form-label">:</label>
                                     <div class="col-sm-9" style="margin-left: -50px;">
-                                        <input type="email" class="form-control" id="email" name="email" value="<?= $data['email'] ?>" placeholder="Email Sekolah" required>
+                                        <input type="email" class="form-control" id="email" name="email"
+                                            value="<?= $data['email'] ?>" placeholder="Email Sekolah" required>
                                     </div>
                                 </div>
                                 <div class="mb-3 row">
@@ -103,11 +108,11 @@ $data = mysqli_fetch_array($sekolah);
                                             foreach ($status as $stt) {
                                                 if ($data['status'] == $stt) {
                                             ?>
-                                                    <option value="<?= $stt ?>" selected><?= $stt ?></option>
-                                                <?php
+                                            <option value="<?= $stt ?>" selected><?= $stt ?></option>
+                                            <?php
                                                 } else {
                                                 ?>
-                                                    <option value="<?= $stt ?>"><?= $stt ?></option>
+                                            <option value="<?= $stt ?>"><?= $stt ?></option>
                                             <?php
                                                 }
                                             }
@@ -125,11 +130,11 @@ $data = mysqli_fetch_array($sekolah);
                                             foreach ($akreditasi as $akre) {
                                                 if ($data['akreditasi'] == $akre) {
                                             ?>
-                                                    <option value="<?= $akre ?>" selected><?= $akre ?></option>
-                                                <?php
+                                            <option value="<?= $akre ?>" selected><?= $akre ?></option>
+                                            <?php
                                                 } else {
                                                 ?>
-                                                    <option value="<?= $akre ?>"><?= $akre ?></option>
+                                            <option value="<?= $akre ?>"><?= $akre ?></option>
                                             <?php
                                                 }
                                             }
@@ -142,14 +147,16 @@ $data = mysqli_fetch_array($sekolah);
                                     <label for="alamat" class="col-sm-2 col-form-label">Alamat</label>
                                     <label for="alamat" class="col-sm-1 col-form-label"></label>
                                     <div class="col-sm-9" style="margin-left: -50px;">
-                                        <textarea name="alamat" id="alamat" cols="79" rows="3" class="form-control" required><?= $data['alamat'] ?></textarea>
+                                        <textarea name="alamat" id="alamat" cols="79" rows="3" class="form-control"
+                                            required><?= $data['alamat'] ?></textarea>
                                     </div>
                                 </div>
                                 <div class="mb-3 row">
                                     <label for="nama" class="col-sm-2 col-form-label">Visi dan Misis</label>
                                     <label for="visimisi" class="col-sm-1 col-form-label"></label>
                                     <div class="col-sm-9" style="margin-left: -50px;">
-                                        <textarea name="visimisi" id="visimisi" cols="79" rows="3" class="form-control" required><?= $data['visimisi'] ?></textarea>
+                                        <textarea name="visimisi" id="visimisi" cols="79" rows="3" class="form-control"
+                                            required><?= $data['visimisi'] ?></textarea>
                                     </div>
                                 </div>
                             </div>
