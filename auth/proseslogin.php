@@ -24,7 +24,7 @@ if (isset($_POST['login'])) {
 
             // Redirect berdasarkan peran
             if ($user['level'] == 'admin') {
-                header("Location: ../admin/index.php");
+                header("Location: ../index.php");
             } elseif ($user['level'] == 'guru') {
                 header("Location: ../guru/index.php");
             } elseif ($user['level'] == 'siswa') {
