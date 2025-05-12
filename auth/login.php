@@ -32,49 +32,49 @@ $data = mysqli_fetch_array($sekolah);
 
     <!-- GANTI BAGIAN STYLE DENGAN YANG INI -->
     <style>
-        body,
-        html {
-            height: 100%;
-            margin: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+    body,
+    html {
+        height: 100%;
+        margin: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
 
-        #bgLogin {
-            background-image: url("../asset/image/<?= $data['gambar'] ?>");
-            background-size: cover;
-            background-position: center;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+    #bgLogin {
+        background-image: url("../asset/image/<?= $data['gambar'] ?>");
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
-        .login-card {
-            background-color: rgba(255, 255, 255, 0.95);
-            border-radius: 12px;
-            padding: 30px 40px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-            width: 100%;
-            max-width: 400px;
-        }
+    .login-card {
+        background-color: rgba(255, 255, 255, 0.95);
+        border-radius: 12px;
+        padding: 30px 40px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        width: 100%;
+        max-width: 400px;
+    }
 
-        .login-logo {
-            text-align: center;
-            margin-bottom: 20px;
-        }
+    .login-logo {
+        text-align: center;
+        margin-bottom: 20px;
+    }
 
-        .login-logo img {
-            width: 100px;
-            height: auto;
-        }
+    .login-logo img {
+        width: 100px;
+        height: auto;
+    }
 
-        .btn-primary {
-            border-radius: 30px;
-        }
+    .btn-primary {
+        border-radius: 30px;
+    }
 
-        .card-footer {
-            background: none;
-        }
+    .card-footer {
+        background: none;
+    }
     </style>
 
 </head>
@@ -95,11 +95,14 @@ $data = mysqli_fetch_array($sekolah);
         </div>
         <form action="proseslogin.php" method="POST">
             <div class="form-floating mb-3">
-                <input class="form-control" id="username" name="username" type="text" pattern="[A-Za-z0-9]{3,}" title="Kombinasi huruf dan angka min 3 karakter" placeholder="Username" autocomplete="off" required />
+                <input class="form-control" id="username" name="username" type="text" pattern="[A-Za-z0-9]{3,}"
+                    title="Kombinasi huruf dan angka min 3 karakter" placeholder="Username" autocomplete="off"
+                    required />
                 <label for="username">Username</label>
             </div>
             <div class="form-floating mb-3">
-                <input class="form-control" id="inputPassword" type="password" placeholder="Password" minlength="4" name="password" required />
+                <input class="form-control" id="inputPassword" type="password" placeholder="Password" minlength="4"
+                    name="password" required />
                 <label for="inputPassword">Password</label>
             </div>
             <?php $role = isset($_GET['role']) && in_array($_GET['role'], ['admin', 'guru', 'siswa']) ? $_GET['role'] : 'admin'; ?>

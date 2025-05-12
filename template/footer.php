@@ -31,9 +31,12 @@ window.addEventListener('DOMContentLoaded', event => {
     </script>
 
     <script>
-document.getElementById("toggleSidebar").addEventListener("click", function() {
-    document.body.classList.toggle("sb-sidenav-toggled");
-});
+const sidebarToggle = document.getElementById("sidebar-toggle");
+if (sidebarToggle) {
+    sidebarToggle.addEventListener("click", function() {
+        document.body.classList.toggle("sb-sidenav-toggled");
+    });
+}
     </script>
 
 
