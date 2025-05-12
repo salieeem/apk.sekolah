@@ -5,8 +5,6 @@
             </div>
         </div>
     </footer>
-    </div>
-    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous">
     </script>
     <script src="<?= $main_url ?>asset/sb-admin/js/scripts.js"></script>
@@ -34,8 +32,7 @@ window.addEventListener('DOMContentLoaded', event => {
 
     <script>
 document.getElementById("toggleSidebar").addEventListener("click", function() {
-    const sidebar = document.getElementById("sidebar");
-    sidebar.classList.toggle("d-none"); // Bootstrap: hide/show
+    document.body.classList.toggle("sb-sidenav-toggled");
 });
     </script>
 

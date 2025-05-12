@@ -163,8 +163,8 @@ $data = mysqli_fetch_array($sekolah);
                         </div>
                     </div>
                 </div>
+            </form>
         </div>
-        </form>
     </main>
 
     <?php

@@ -23,11 +23,11 @@ $data = mysqli_fetch_assoc($sekolah);
 ?>
 
 <div id="layoutSidenav_content">
-    <main>
+    <main style="flex: 1;">
         <div class="container-fluid px-4">
             <h1 class="mt-4">Sekolah</h1>
             <ol class="breadcrumb mb-4">
-                <li class="breadcrumb-item"><a href="../index.php">Home</a></li>
+                <li class="breadcrumb-item"><a href="../guru/index.php">Home</a></li>
                 <li class="breadcrumb-item active">Profile Sekolah</li>
             </ol>
             <div class="card">
@@ -38,7 +38,8 @@ $data = mysqli_fetch_assoc($sekolah);
                     <div class="row">
                         <!-- Gambar -->
                         <div class="col-4 text-center px-5">
-                            <img src="../asset/image/<?= $data['gambar'] ?>" alt="gambar sekolah" class="mb-3 img-thumbnail" width="100%">
+                            <img src="../asset/image/<?= $data['gambar'] ?>" alt="gambar sekolah"
+                                class="mb-3 img-thumbnail" width="100%">
                         </div>
 
                         <!-- Info Sekolah -->
@@ -73,10 +74,10 @@ $data = mysqli_fetch_assoc($sekolah);
             </div>
         </div>
     </main>
-</div>
 
-<?php
 
-require_once "../template/footer.php";
+    <?php
 
-?>
+    require_once "../template/footer.php";
+
+    ?>

@@ -17,7 +17,7 @@ require_once "template/sidebar.php";
 
 ?>
 
-<div id="layoutSidenav_content" class="flex-grow-1 d-flex flex-column">
+<div id="layoutSidenav_content">
     <main>
         <div class="container-fluid px-4">
             <h1 class="mt-4">Dashboard</h1>
@@ -85,6 +85,8 @@ require_once "template/sidebar.php";
         </div>
     </main>
 
-    <?php require_once "template/footer.php"; ?>
-    <!-- footer diletakkan di dalam layoutSidenav_content -->
-</div>
+    <?php
+
+    require_once "template/footer.php";
+
+    ?>

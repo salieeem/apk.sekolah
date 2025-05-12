@@ -33,28 +33,30 @@ require_once "../template/navbar.php";
                 <div class="card-body">
                     <table class="table table-bordered table-striped table-hover" id="datatablesSimple">
                         <thead class="table-light">
-                                <th scope="col"><center>No</center></th>
-                                <th scope="col">
-                                    <center>Foto</center>
-                                </th>
-                                <th scope="col">
-                                    <center>NIS</center>
-                                </th>
-                                <th scope="col">
-                                    <center>Nama</center>
-                                </th>
-                                <th scope="col">
-                                    <center>Kelas</center>
-                                </th>
-                                <th scope="col">
-                                    <center>Jurusan</center>
-                                </th>
-                                <th scope="col">
-                                    <center>Alamat</center>
-                                </th>
-                                <th scope="col">
-                                    <center>Operasi</center>
-                                </th>
+                            <th scope="col">
+                                <center>No</center>
+                            </th>
+                            <th scope="col">
+                                <center>Foto</center>
+                            </th>
+                            <th scope="col">
+                                <center>NIS</center>
+                            </th>
+                            <th scope="col">
+                                <center>Nama</center>
+                            </th>
+                            <th scope="col">
+                                <center>Kelas</center>
+                            </th>
+                            <th scope="col">
+                                <center>Jurusan</center>
+                            </th>
+                            <th scope="col">
+                                <center>Alamat</center>
+                            </th>
+                            <th scope="col">
+                                <center>Operasi</center>
+                            </th>
                             </tr>
 
                         </thead>
@@ -67,21 +69,37 @@ require_once "../template/navbar.php";
                                     ? $data['foto']
                                     : 'default-user.png';
                             ?>
-                                <tr>
-                                    <td scope="row"><center><?= $no++ ?></center></td>
-                                    <td style="text-align: center;"><center>
-                                        <img src="../asset/image/<?= $foto ?>" class="rounded-circle border border-2" width="50" height="50" style="object-fit: cover;"></center>
-                                    </td>
-                                    <td><?= $data['nis'] ?></td>
-                                    <td><?= ucwords($data['nama']) ?></td>
-                                    <td><center><?= $data['kelas'] ?></center></td>
-                                    <td><center><?= $data['jurusan'] ?></center></td>
-                                    <td><?= $data['alamat'] ?></td>
-                                    <td><center>
-                                        <a href="edit-siswa.php?nis=<?= $data['nis'] ?>" class="btn btn-warning btn-sm me-1" title="Update"><i class="fa-solid fa-pen"></i></a>
-                                        <a href="hapus-siswa.php?nis=<?= $data['nis'] ?>&foto=<?= $data['foto'] ?>" class="btn btn-danger btn-sm" title="Hapus Siswa" onclick="return confirm('Anda yakin akan menghapus data ini?')"><i class="fa-solid fa-trash"></i></a></center>
-                                    </td>
-                                </tr>
+                            <tr>
+                                <td scope="row">
+                                    <center><?= $no++ ?></center>
+                                </td>
+                                <td style="text-align: center;">
+                                    <center>
+                                        <img src="../asset/image/<?= $foto ?>" class="rounded-circle border border-2"
+                                            width="50" height="50" style="object-fit: cover;">
+                                    </center>
+                                </td>
+                                <td><?= $data['nis'] ?></td>
+                                <td><?= ucwords($data['nama']) ?></td>
+                                <td>
+                                    <center><?= $data['kelas'] ?></center>
+                                </td>
+                                <td>
+                                    <center><?= $data['jurusan'] ?></center>
+                                </td>
+                                <td><?= $data['alamat'] ?></td>
+                                <td>
+                                    <center>
+                                        <a href="edit-siswa.php?nis=<?= $data['nis'] ?>"
+                                            class="btn btn-warning btn-sm me-1" title="Update"><i
+                                                class="fa-solid fa-pen"></i></a>
+                                        <a href="hapus-siswa.php?nis=<?= $data['nis'] ?>&foto=<?= $data['foto'] ?>"
+                                            class="btn btn-danger btn-sm" title="Hapus Siswa"
+                                            onclick="return confirm('Anda yakin akan menghapus data ini?')"><i
+                                                class="fa-solid fa-trash"></i></a>
+                                    </center>
+                                </td>
+                            </tr>
                             <?php } ?>
                         </tbody>
                     </table>
@@ -89,10 +107,6 @@ require_once "../template/navbar.php";
             </div>
         </div>
     </main>
-
-
-
-
 
     <?php
 
