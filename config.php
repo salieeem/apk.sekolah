@@ -1,7 +1,7 @@
 <?php
 
 // buat koneksi
-$koneksi = mysqli_connect("localhost", "root", "", "db_sekolah");
+$koneksi = mysqli_connect("sql313.byethost5.com", "b5_38928852", "LgHNiq#j*Z5wDkP", "b5_38928852_db_sekolah");
 
 // cek koneksi
 //  if (mysqli_connect_errno()) {
@@ -12,7 +12,8 @@ $koneksi = mysqli_connect("localhost", "root", "", "db_sekolah");
 
 // url induk
 
-$main_url = "http://localhost/sekolah/";
+$main_url = "http://qurrotaayun.byethost5.com/";
+
 
 function uploadimg($url)
 {
